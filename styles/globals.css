@@ -1,21 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --white: #FFFFFF;
+  --background: #f6f6f6;
+  --light-hover: #e8e8e8;
+  --greyground: #aaaaaa;
   --foreground: #171717;
+  --serenity-midnight: #162560;
+  --cornflower: #607ae3;
+  --dark-text: #000000;
+  --light-text: #FFFFFF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark-text {
+  color: var(--dark-text);
+}
+
+.main-page-container {
+  @apply flex flex-col mx-auto items-center;
+  min-width: 80%;
+  max-width: 80%;
+}
+
+.title {
+  @apply text-5xl;
+  color: var(--serenity-midnight);
+  text-align: center;
+  font-weight: 300;
+}
+
+.subtitle {
+  @apply text-2xl;
+  text-align: center;
+  font-weight: 300;
+  color: var(--dark-text);
+}
+
+.subparagraph {
+  @apply text-sm;
+}
+
+.serenity-dark-blue-bg {
+  background-color: var(--serenity-midnight);
+}
+
+.bp {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.button-light {
+  @apply bp;
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--serenity-midnight);
+}
+
+.button-light:hover {
+  background-color: var(--background);
+}
+
+.button-dark {
+  @apply round-soft flex flex-row bp justify-center;
+  cursor: pointer;
+  background-color: var(--serenity-midnight);
+  color: var(--white);
+}
+
+.button-light-blue {
+  cursor: pointer;
+  background-color: var(--cornflower);
+  color: var(--background);
+}
+
+.button-light-blue:hover {
+  background-color: var(--serenity-midnight);
+}
+
+.button-outline {
+  @apply round-soft flex flex-row justify-center border-gray-400;
+  cursor: pointer;
+  border-width: 1px;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.button-outline:hover {
+  background-color: var(--light-hover);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+  border-color: var(--serenity-midnight);
+  border-width: 1px;
+  color: var(--light-text);
+}
+
+.nav-item:hover {
+  border-radius: 9999px;
+  border-color: var(--background);
+}
+
+.template-container {
+  @apply object-center mx-auto;
+  display: block;
+  max-width: 80%;
+  min-width: 80%;
+}
+
+.template-preview {
+  @apply p-2 m-3;
+  cursor: pointer;
+  background-color: var(--white);
+  border-radius: 12px;
+  filter: drop-shadow(0 0.3rem 0.2rem var(--greyground));
+  width: 32vw;
+}
+
+.template-preview:hover {
+  background-color: var(--light-hover);
+}
+
+.multi-line-input {
+  @apply text-sm;
+  word-wrap: break-word;
+  padding: 12px;
+  resize: none;
+  border-width: 1px;
+  border-radius: 6px;
+  border-color: var(--greyground);
+}
+
+.multi-line-input:focus {
+  outline: none;
+}
+
+.single-line-input {
+  @apply text-sm;
+  padding: 8px;
+  border-width: 1px;
+  border-radius: 9999px;
+  border-color: var(--greyground);
+  width: 80%;
+}
+
+.round-soft {
+  border-radius: 10px;
+}
+
+.half {
+  max-width: 50%;
+  min-width: 50%;
+}
+
+.flex1 {
+  flex: 1;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  cursor: pointer;
 }
