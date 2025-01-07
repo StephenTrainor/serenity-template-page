@@ -8,7 +8,7 @@ import TemplateItem from "@/components/TemplateItem";
 import FilledButton from "@/components/FilledButton";
 import OutlineButtonWithIcon from "@/components/OutlineButtonWithIcon";
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params } : { params: any}) {
   // const res = await fetch();
   // console.log(params.id);
 
