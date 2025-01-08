@@ -36,7 +36,7 @@ export async function getServerSideProps({ params } : { params: any}) {
     }, {
       fieldTitle: "Are all fire extinguishers operational?",
       answerOptions: ["Yes", "No", "Some"],
-      fieldType: "checkboxGroup",
+      fieldType: "checkBoxGroup",
     }, {
       fieldTitle: "Rate smoke ventilation quality for the room (1-10)",
       answerOptions: ["1", "10"],
@@ -131,6 +131,7 @@ const TemplatePage = ({
         <div className="form-container">
           {templateFields.map((templateField) => (
             <TemplateItem 
+              key={id}
               templateField={templateField}
             />
           ))}
