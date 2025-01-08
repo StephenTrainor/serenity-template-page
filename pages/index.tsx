@@ -59,7 +59,6 @@ const Home: React.FC = () => {
     },
   ]
 
-
   return (
     <div>
       <Navbar />
@@ -90,7 +89,7 @@ const Home: React.FC = () => {
         <div className="flex flex-row">
           <Form action="/" className="flex flex-col half">
             <input 
-              className="single-line-input mx-auto mb-2"
+              className="single-line-input mx-auto mb-2 w-10/12"
               placeholder="Search Templates"
             />
             <div className="flex flex-row mx-auto space-x-2">
