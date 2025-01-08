@@ -4,9 +4,9 @@ export type TemplateField = {
   fieldType: "singleLineText" | 
               "multiLineText" | 
               "number" | 
-              "checkbox" | 
               "date" |
               "slider" | 
               "dropdown" |
-              "checkboxGroup"
+              "radio" |
+              "checkBoxGroup"
 }
