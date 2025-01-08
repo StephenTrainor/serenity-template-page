@@ -6,13 +6,19 @@ const TemplatePreview: React.FC<Template> = ({id, imageUrl, name, author}: Templ
   return (
     <Link href={`/templates/${id}`} className="template-preview">
       <div className="flex flex-row">
-        <Image 
+        {imageUrl ? <Image 
           className="mx-2"
           src={imageUrl}
           height={84}
           width={84}
           alt={`Icon for ${name} template`}
-        />
+        /> : <Image 
+          className="mx-2"
+          src="/default-template-icon-64px.png"
+          height={84}
+          width={84}
+          alt="Default icon of a checklist"
+        />}
         <div className="flex flex-col my-auto">
           <p className="subparagraph">{author}</p>
           <p className="">{name}</p>
