@@ -20,6 +20,11 @@
   color: var(--dark-text);
 }
 
+.serenity-divider {
+  width: 90%;
+  border: 0.85px var(--cornflower) solid
+}
+
 .main-page-container {
   @apply flex flex-col mx-auto items-center;
   min-width: 80%;
@@ -28,6 +33,13 @@
 
 .title {
   @apply text-5xl;
+  color: var(--serenity-midnight);
+  text-align: center;
+  font-weight: 300;
+}
+
+.second-title {
+  @apply text-4xl;
   color: var(--serenity-midnight);
   text-align: center;
   font-weight: 300;
@@ -165,14 +177,26 @@
   border-color: var(--border);
 }
 
+.share-dropdown-container {
+  @apply absolute round-soft mt-1;
+  border-width: 1px;
+  border-color: var(--border);
+}
+
+.share-dropdown-item {
+  @apply ml-auto flex flex-row p-1;
+}
+
+.share-dropdown-item > p {
+  @apply my-auto m-1;
+}
+
 .round-soft {
   border-radius: 10px;
 }
 
 .half {
-  /* max-width: 45%; */
   max-width: 50%;
-  /* min-width: 45%; */
   min-width: 50%;
 }
 
