@@ -4,8 +4,11 @@ import { useRouter } from "next/router";
 import { Template } from "@/types/template";
 import { TemplateField } from "@/types/templateField";
 import TemplateItem from "@/components/TemplateItem";
-import FilledButton from "@/components/FilledButton";
+import SerenityDivider from "@/components/SerenityDivider";
 import OutlineButtonWithIcon from "@/components/OutlineButtonWithIcon";
+import ShareDropdown from "@/components/ShareDropdown";
+import DownloadEditSaveSection from "@/components/DownloadEditSaveSection";
+import GenerateTemplateSection from "@/components/GenerateTemplateSection";
 
 export async function getServerSideProps({ params } : { params: any}) {
   // This is where you would fetch any data from the server
@@ -78,7 +81,7 @@ const TemplatePage = ({
   return (
     <div>
       <Navbar />
-      <div className="main-page-container my-6">
+      <div className="main-page-container my-6 space-y-6">
         <div className="flex flex-row w-full">
           <div className="flex1">{/* Spacer to get the right-aligned div*/}</div>
           <div className="">
@@ -91,23 +94,7 @@ const TemplatePage = ({
               height={128}
               alt={`Icon for ${template.name} template`}
             />
-            <div className="flex flex-row justify-center space-x-6">
-              <OutlineButtonWithIcon
-                classes=""
-                buttonText="Download PDF"
-                buttonClass="w-44"
-                src="/download-icon-64px.png"
-                size={20}
-                alt="Download Icon"
-              />
-              <FilledButton 
-                classes="my-auto ml-1"
-                buttonText="Edit and Save"
-                buttonClass="button-dark w-44"
-                src="/edit-icon-64px.png"
-                alt="Edit Icon"
-              />
-            </div>
+            <DownloadEditSaveSection />
           </div>
           <div className="flex1 flex flex-row justify-end">
             <div className="flex flex-col space-y-2">
@@ -121,16 +108,12 @@ const TemplatePage = ({
                 />
               </div>
               <div className="ml-auto">
-                <OutlineButtonWithIcon 
-                  buttonText="Share"
-                  src="/share-icon-64px.png"
-                  size={20}
-                  alt="Share Template Icon"
-                />
+                <ShareDropdown />
               </div>
             </div>
           </div>
         </div>
+        <SerenityDivider />
         <div className="form-container m-6">
           {templateFields.map((templateField) => (
             <TemplateItem 
@@ -138,6 +121,14 @@ const TemplatePage = ({
               templateField={templateField}
             />
           ))}
+        </div>
+        <DownloadEditSaveSection />
+        <SerenityDivider />
+        <div className="">
+          <p className="second-title">Looking For Something Else?</p>
+        </div>
+        <div className="justify-center flex w-full">
+          <GenerateTemplateSection />
         </div>
       </div>
     </div>
