@@ -82,7 +82,7 @@ const Home: React.FC = () => {
               autoComplete="off"
               placeholder="Enter Template Description"
             ></textarea>
-            <button className="button-light-blue rounded-full py-2 px-6 w-9/10 max-[1330px]:w-2/5 mx-auto my-2">
+            <button className="button-light-blue rounded-full py-2 px-6 max-[1330px]:w-2/5 mx-auto my-2">
               Generate Now
             </button>
           </Form>
