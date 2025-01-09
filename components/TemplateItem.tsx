@@ -3,7 +3,6 @@ import Date from "./Date";
 import Radio from "./Radio";
 import Number from "./Number";
 import Slider from "./Slider";
-import Dropdown from "./Dropdown";
 import CheckBoxGroup from "./CheckBoxGroup";
 import MultiLineText from "./MultiLineText";
 import SingleLineText from "./SingleLineText";
@@ -17,7 +16,6 @@ const TemplateItem = ({ templateField } : {templateField: TemplateField}) => {
     "radio": <Radio answerOptions={templateField .answerOptions}/>,
     "date": <Date answerOptions={templateField.answerOptions}/>,
     "slider": <Slider answerOptions={templateField.answerOptions}/>,
-    "dropdown": <Dropdown answerOptions={templateField.answerOptions}/>,
   };
 
   return (
