@@ -7,6 +7,9 @@ import TemplatePreview from "@/components/TemplatePreview";
 import OutlineButtonWithIcon from "@/components/OutlineButtonWithIcon";
 
 const Home: React.FC = () => {
+  // real data could be fetched from a server or db using getServerSideProps
+  // and subsequent requests could be made asynchronously 
+  // mock data for the retrieved templates
   const templates: Template[] = [
     {
       id: 1,
@@ -62,8 +65,8 @@ const Home: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <div className="main-page-container">
-        <div className="title mx-auto my-8">
+      <div className="main-page-container space-y-10">
+        <div className="title mx-auto mt-8">
             <div>Browse Serenity's</div>
             <div>Inspection Templates</div>
         </div>
@@ -81,7 +84,7 @@ const Home: React.FC = () => {
               autoComplete="off"
               placeholder="Enter Template Description"
             ></textarea>
-            <button className="button-light-blue rounded-full py-2 px-6">
+            <button className="button-light-blue rounded-full py-2 px-6 w-2/5 mx-auto my-2">
               Generate Now
             </button>
           </Form>

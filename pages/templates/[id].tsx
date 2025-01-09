@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -9,9 +8,11 @@ import FilledButton from "@/components/FilledButton";
 import OutlineButtonWithIcon from "@/components/OutlineButtonWithIcon";
 
 export async function getServerSideProps({ params } : { params: any}) {
+  // This is where you would fetch any data from the server
   // const res = await fetch();
   // console.log(params.id);
 
+  // mock data for a fire safety inspection template
   const templateFields: Array<TemplateField> = [
     {
       fieldTitle: "Inspector Name",
@@ -30,13 +31,9 @@ export async function getServerSideProps({ params } : { params: any}) {
       answerOptions: ["Enter Description"],
       fieldType: "multiLineText",
     }, {
-      fieldTitle: "Do all exits have functional exit signs above them?",
-      answerOptions: ["Yes", "No"],
-      fieldType: "dropdown",
-    }, {
       fieldTitle: "Are all fire extinguishers operational?",
       answerOptions: ["Yes", "No", "Some"],
-      fieldType: "checkBoxGroup",
+      fieldType: "radio",
     }, {
       fieldTitle: "Rate smoke ventilation quality for the room (1-10)",
       answerOptions: ["1", "10"],
@@ -52,6 +49,7 @@ export async function getServerSideProps({ params } : { params: any}) {
     }
   ];
 
+  // more mock data for what would be retrived from the server
   const template: Template = {
     id: params.id,
     name: "Fire Safety Inspection",
@@ -59,6 +57,7 @@ export async function getServerSideProps({ params } : { params: any}) {
     imageUrl: "/5.png",
   };
 
+  // pass retrieved data as props for the page
   return { props: { 
     templateFields,
     template
@@ -70,7 +69,10 @@ const TemplatePage = ({
   } : {
     templateFields: Array<TemplateField>, template: Template
   }) => {
+  // use the router hook to get the template id and route to other pages if necessary
   const router = useRouter();
+
+  // get the id for the template
   const id: number = typeof router.query.id === "string" ? parseInt(router.query.id) : 0;
 
   return (
@@ -128,7 +130,7 @@ const TemplatePage = ({
             </div>
           </div>
         </div>
-        <div className="form-container">
+        <div className="form-container m-6">
           {templateFields.map((templateField) => (
             <TemplateItem 
               key={id}
