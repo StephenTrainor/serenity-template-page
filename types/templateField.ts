@@ -6,7 +6,6 @@ export type TemplateField = {
               "number" | 
               "date" |
               "slider" | 
-              "dropdown" |
               "radio" |
               "checkBoxGroup"
 }
