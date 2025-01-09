@@ -1,10 +1,11 @@
 import Form from "next/form";
-import Image from "next/image";
 import React from 'react';
 import Navbar from "@/components/Navbar";
 import { Template } from "@/types/template";
 import TemplatePreview from "@/components/TemplatePreview";
 import OutlineButtonWithIcon from "@/components/OutlineButtonWithIcon";
+import GenerateTemplateSection from "@/components/GenerateTemplateSection";
+import SerenityDivider from "@/components/SerenityDivider";
 
 const Home: React.FC = () => {
   // real data could be fetched from a server or db using getServerSideProps
@@ -70,23 +71,9 @@ const Home: React.FC = () => {
             <div>Browse Serenity's</div>
             <div>Inspection Templates</div>
         </div>
-        <div className="flex flex-row w-10/12">
-          <div className="flex flex-col half text-center">
-            <p className="subtitle">Generate Tailored Templates with AI</p>
-            <p className="dark-text w-2/3 mx-auto">Enter a description of how the template will be used or a few keywords and we'll take care of the rest.</p>
-          </div>
-          <Form action="/TODO" className="flex flex-col half p-4">
-            <textarea
-              className="multi-line-input"
-              name="description"
-              autoComplete="off"
-              placeholder="Enter Template Description"
-            ></textarea>
-            <button className="button-light-blue rounded-full py-2 px-6 max-[1330px]:w-2/5 mx-auto my-2">
-              Generate Now
-            </button>
-          </Form>
-        </div>
+        <SerenityDivider />
+        <GenerateTemplateSection />
+        <SerenityDivider />
         <div className="flex flex-row w-10/12">
           <Form action="/" className="flex flex-col half my-auto">
             <input 
@@ -109,11 +96,12 @@ const Home: React.FC = () => {
               <button className="button-light-blue round-soft py-1 px-4">Search</button>
             </div>
           </Form>
-          <div className="flex flex-col half text-center">
+          <div className="flex flex-col half text-center space-y-3">
             <p className="subtitle">Instantly Utilize Preexisting Templates</p>
             <p className="dark-text w-2/3 mx-auto">Browse 100000+ existing templates by category, popularity, and more. Inspection templates can be downloaded and used for free.</p>
           </div>
         </div>
+        <SerenityDivider />
         <div className="flex flex-wrap justify-center">
           {templates.map((template: Template) => (
             <TemplatePreview 
