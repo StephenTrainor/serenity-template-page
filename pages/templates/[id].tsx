@@ -110,12 +110,13 @@ const TemplatePage = ({
             </div>
           </div>
           <div className="flex1 flex flex-row justify-end">
-            <div className="flex flex-col">
+            <div className="flex flex-col space-y-2">
               <div className="ml-auto">
                 <OutlineButtonWithIcon 
                   buttonText="Copy Link"
                   src="/copy-icon-64px.png"
                   size={20}
+                  onClick={() => {navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`)}}
                   alt="Copy Link Icon"
                 />
               </div>
