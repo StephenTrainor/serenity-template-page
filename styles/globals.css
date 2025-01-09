@@ -67,7 +67,7 @@
 }
 
 .button-dark {
-  @apply round-soft flex flex-row bp justify-center;
+  @apply round-soft flex flex-row justify-center;
   cursor: pointer;
   background-color: var(--serenity-midnight);
   color: var(--white);
@@ -80,6 +80,7 @@
 .button-light-blue {
   cursor: pointer;
   background-color: var(--cornflower);
+  border-width: 1px;
   color: var(--background);
 }
 
@@ -92,7 +93,6 @@
   border-color: var(--border);
   cursor: pointer;
   border-width: 1px;
-  /* background-color: var(--background); */
   color: var(--foreground);
 }
 
@@ -170,7 +170,9 @@
 }
 
 .half {
+  /* max-width: 45%; */
   max-width: 50%;
+  /* min-width: 45%; */
   min-width: 50%;
 }
 

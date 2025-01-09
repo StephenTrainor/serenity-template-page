@@ -65,32 +65,30 @@ const Home: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <div className="main-page-container space-y-10">
+      <div className="main-page-container space-y-8">
         <div className="title mx-auto mt-8">
             <div>Browse Serenity's</div>
             <div>Inspection Templates</div>
         </div>
-        <div className="flex flex-row">
-          <div className="flex flex-col half">
+        <div className="flex flex-row w-10/12">
+          <div className="flex flex-col half text-center">
             <p className="subtitle">Generate Tailored Templates with AI</p>
-            <p className="dark-text">Enter a description of how the 
-                                    template will be used or a few 
-                                    keywords and we'll take care of the rest.</p>
+            <p className="dark-text w-2/3 mx-auto">Enter a description of how the template will be used or a few keywords and we'll take care of the rest.</p>
           </div>
-          <Form action="/TODO" className="flex flex-col half">
+          <Form action="/TODO" className="flex flex-col half p-4">
             <textarea
               className="multi-line-input"
               name="description"
               autoComplete="off"
               placeholder="Enter Template Description"
             ></textarea>
-            <button className="button-light-blue rounded-full py-2 px-6 w-2/5 mx-auto my-2">
+            <button className="button-light-blue rounded-full py-2 px-6 w-9/10 max-[1330px]:w-2/5 mx-auto my-2">
               Generate Now
             </button>
           </Form>
         </div>
-        <div className="flex flex-row">
-          <Form action="/" className="flex flex-col half">
+        <div className="flex flex-row w-10/12">
+          <Form action="/" className="flex flex-col half my-auto">
             <input 
               className="single-line-input mx-auto mb-2 w-10/12"
               placeholder="Search Templates"
@@ -111,11 +109,9 @@ const Home: React.FC = () => {
               <button className="button-light-blue round-soft py-1 px-4">Search</button>
             </div>
           </Form>
-          <div className="flex flex-col half">
+          <div className="flex flex-col half text-center">
             <p className="subtitle">Instantly Utilize Preexisting Templates</p>
-            <p className="dark-text">Browse 100000+ existing templates by category, 
-                                    popularity, and more. Inspection templates can 
-                                    be downloaded and used for free.</p>
+            <p className="dark-text w-2/3 mx-auto">Browse 100000+ existing templates by category, popularity, and more. Inspection templates can be downloaded and used for free.</p>
           </div>
         </div>
         <div className="flex flex-wrap justify-center">
