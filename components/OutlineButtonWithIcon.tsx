@@ -7,7 +7,7 @@ const OutlineButtonWithIcon = ({
 }) => {
   return (
     <div className={`button-outline py-1 px-3 ${buttonClass}`}>
-      <button onClick={() => onClick()}>{buttonText}</button>
+      <button onClick={onClick}>{buttonText}</button>
       <Image 
         className={`self-center ml-1 ${classes}`}
         src={src}

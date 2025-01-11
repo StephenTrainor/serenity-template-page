@@ -1,7 +1,10 @@
 import OutlineButtonWithIcon from "./OutlineButtonWithIcon";
 import FilledButton from "./FilledButton";
 
-const DownloadEditSaveSection = () => {
+const DownloadEditSaveSection = ({
+  downloadOnClick, editAndSaveOnClick } : {
+  downloadOnClick: () => void, editAndSaveOnClick: () => void,
+}) => {
   return (
     <div className="flex flex-row justify-center space-x-6">
       <OutlineButtonWithIcon
@@ -11,6 +14,7 @@ const DownloadEditSaveSection = () => {
         src="/download-icon-64px.png"
         size={20}
         alt="Download Icon"
+        onClick={downloadOnClick}
       />
       <FilledButton 
         classes="my-auto ml-1"
@@ -18,9 +22,15 @@ const DownloadEditSaveSection = () => {
         buttonClass="button-dark w-44"
         src="/edit-icon-64px.png"
         alt="Edit Icon"
+        onClick={editAndSaveOnClick}
       />
     </div>
   );
 };
+
+DownloadEditSaveSection.defaultProps = {
+  downloadOnClick: () => {},
+  editAndSaveOnClick: () => {},
+}
 
 export default DownloadEditSaveSection;
