@@ -1,5 +1,5 @@
-import Form from "next/form";
 import React from 'react';
+import Form from "next/form";
 import Navbar from "@/components/Navbar";
 import { Template } from "@/types/template";
 import TemplatePreview from "@/components/TemplatePreview";
@@ -16,7 +16,7 @@ const Home: React.FC = () => {
       id: 1,
       name: "Healthcare Checklist",
       author: "CVS Pharmaceuticals",
-      imageUrl: "/1.png",
+      // imageUrl: "/1.png",
     },
     {
       id: 2,
@@ -104,7 +104,8 @@ const Home: React.FC = () => {
         <SerenityDivider />
         <div className="flex flex-wrap justify-center">
           {templates.map((template: Template) => (
-            <TemplatePreview 
+            <TemplatePreview
+              key={template.id}
               id={template.id}
               name={template.name}
               author={template.author}
@@ -115,6 +116,6 @@ const Home: React.FC = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Home;
