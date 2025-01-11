@@ -1,11 +1,12 @@
-import Date from "./Date";
-import Radio from "./Radio";
-import Number from "./Number";
+import Date from "@/components/templateScreen/Date";
+import Radio from "@/components/templateScreen/Radio";
+import Number from "@/components/templateScreen/Number";
 import Slider from "./Slider";
-import CheckBoxGroup from "./CheckBoxGroup";
-import MultiLineText from "./MultiLineText";
-import SingleLineText from "./SingleLineText";
+import CheckBoxGroup from "@/components/templateScreen/CheckBoxGroup";
+import MultiLineText from "@/components/templateScreen/MultiLineText";
+import SingleLineText from "@/components/templateScreen/SingleLineText";
 import {TemplateSectionItem} from "@/types/template";
+import TextWithToolTip from "@/components/TextWithToolTip";
 
 const TemplateItem = ({ templateSectionItem } : {templateSectionItem: TemplateSectionItem}) => {
   const components = {
@@ -20,7 +21,13 @@ const TemplateItem = ({ templateSectionItem } : {templateSectionItem: TemplateSe
 
   return (
     <div className="">
-      <p className="pb-1">{templateSectionItem.fieldTitle}</p>
+      {/*<p className="pb-1">{templateSectionItem.fieldTitle}</p>*/}
+      <TextWithToolTip
+        toolTipText={templateSectionItem.fieldDetails}
+        mainText={templateSectionItem.fieldTitle}
+        mainTextClasses={"text-left"}
+        centeredText={false}
+      />
       {components[templateSectionItem.fieldType]}
     </div>
   );
