@@ -1,3 +1,5 @@
+export const DEFAULT_TEMPLATE_ICON_URL = "/default-template-icon-64px.png";
+
 export type Template = {
   id: number;
   name: string;
