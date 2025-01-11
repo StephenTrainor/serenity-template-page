@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Template } from "@/types/template";
+import {DEFAULT_TEMPLATE_ICON_URL, Template} from "@/types/template";
 
 const TemplatePreview: React.FC<Template> = ({id, imageUrl, name, author}: Template) => {
   return (
@@ -14,7 +14,7 @@ const TemplatePreview: React.FC<Template> = ({id, imageUrl, name, author}: Templ
           alt={`Icon for ${name} template`}
         /> : <Image 
           className="mx-2"
-          src="/default-template-icon-64px.png"
+          src={DEFAULT_TEMPLATE_ICON_URL}
           height={84}
           width={84}
           alt="Default icon of a checklist"
