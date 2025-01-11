@@ -22,13 +22,41 @@
 
 .serenity-divider {
   width: 90%;
-  border: 0.85px var(--cornflower) solid
+  @apply mx-auto;
+  border: 0.85px var(--cornflower) solid;
+  /*width: 100%;*/
 }
 
 .main-page-container {
   @apply flex flex-col mx-auto items-center;
   min-width: 80%;
   max-width: 80%;
+}
+
+.form-container {
+  @apply round-soft px-7 py-5 space-y-4;
+  border-width: 1px;
+  border-color: var(--border);
+}
+
+.template-container {
+  @apply object-center mx-auto;
+  display: block;
+  max-width: 80%;
+  min-width: 80%;
+}
+
+.template-preview {
+  @apply p-2 m-3;
+  cursor: pointer;
+  background-color: var(--white);
+  border-radius: 12px;
+  filter: drop-shadow(0 0.3rem 0.2rem var(--greyground));
+  width: 32vw;
+}
+
+.template-preview:hover {
+  background-color: var(--light-hover);
 }
 
 .title {
@@ -43,6 +71,11 @@
   color: var(--serenity-midnight);
   text-align: center;
   font-weight: 300;
+}
+
+.section-title {
+  @apply text-2xl;
+  color: var(--serenity-midnight);
 }
 
 .subtitle {
@@ -127,32 +160,6 @@
 .nav-item:hover {
   border-radius: 9999px;
   border-color: var(--background);
-}
-
-.form-container {
-  @apply round-soft px-7 py-5 space-y-4;
-  border-width: 1px;
-  border-color: var(--border);
-}
-
-.template-container {
-  @apply object-center mx-auto;
-  display: block;
-  max-width: 80%;
-  min-width: 80%;
-}
-
-.template-preview {
-  @apply p-2 m-3;
-  cursor: pointer;
-  background-color: var(--white);
-  border-radius: 12px;
-  filter: drop-shadow(0 0.3rem 0.2rem var(--greyground));
-  width: 32vw;
-}
-
-.template-preview:hover {
-  background-color: var(--light-hover);
 }
 
 .multi-line-input {
