@@ -1,3 +1,5 @@
+// ThinLineSignatureField differs from the MultiLineWrittenField component because this component places the text
+// centered and below the line
 const ThinLineSignatureField = ({
   text
 } : {

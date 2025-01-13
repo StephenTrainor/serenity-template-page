@@ -1,11 +1,14 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {DEFAULT_TEMPLATE_ICON_URL, Template} from "@/types/template";
+import { DEFAULT_TEMPLATE_ICON_URL, Template } from "@/types/template";
 
 const TemplatePreview: React.FC<Template> = ({id, imageUrl, name, author}: Template) => {
   return (
+    // Wrap the Link tag around everything so that the entire preview acts as a button
     <Link href={`/templates/${id}`} className="template-preview">
       <div className="flex flex-row">
+        {/* checks the imageURL to render a default icon to maintain a clean appearance */}
         {imageUrl ? <Image 
           className="mx-2"
           src={imageUrl}

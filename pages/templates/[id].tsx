@@ -163,19 +163,20 @@ const TemplatePage = ({
   // get the id for the template
   const id: number = typeof router.query.id === "string" ? parseInt(router.query.id) : 0;
 
+  // create a ref that will essentially point to which div should be printed
   const contentRef = useRef<HTMLDivElement>(null);
+
+  // function from react-to-print hook that will open the print/save pdf page
   const reactToPrint = useReactToPrint({
     contentRef: contentRef,
     documentTitle: "template"
   });
-  const handleDownloadClick = () => {
-    reactToPrint();
-  };
 
   return (
     <div>
       <Navbar/>
       <div className="main-page-container my-6 space-y-6">
+        {/* must place the html content to print out somewhere in the page but keep it hidden from the user */}
         <div className={"hidden"}>
           <div ref={contentRef}>
             <PDF
@@ -191,8 +192,8 @@ const TemplatePage = ({
             <p className="subtitle">{template.author}</p>
             <TemplateIcon template={template}/>
             <DownloadEditSaveSection
-              downloadOnClick={() => handleDownloadClick()}
-              editAndSaveOnClick={() => router.push("/TODO-SOME-URL")}
+              downloadOnClick={() => reactToPrint()}
+              editAndSaveOnClick={() => router.push("/TODO-SOME-URL").then(r => {})}
             />
           </div>
           <div className="flex1 flex flex-row justify-end">
@@ -203,8 +204,8 @@ const TemplatePage = ({
                   src="/copy-icon-64px.png"
                   size={20}
                   onClick={() => {
-                    navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`).then(r => {
-                    })
+                    {/* Copies the current path to the clipboard for easy sharing */}
+                    navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`).then(r => {})
                   }}
                   alt="Copy Link Icon"
                 />

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import DownArrow from "./DownArrow";
 
+// Simple design for the navbar, no buttons are functional except for going to the home page by clicking the icon
 const Navbar = () => {
   return (
     <div className="flex flex-row serenity-dark-blue-bg justify-between">

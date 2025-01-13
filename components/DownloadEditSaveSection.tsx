@@ -1,6 +1,8 @@
-import OutlineButtonWithIcon from "./OutlineButtonWithIcon";
 import FilledButton from "./FilledButton";
+import OutlineButtonWithIcon from "./OutlineButtonWithIcon";
 
+// This component groups the two buttons together so they can be reused in parts of the website. Also accepts two
+// functions that are passed down to the buttons so they can be functional if needed down the road
 const DownloadEditSaveSection = ({
   downloadOnClick, editAndSaveOnClick } : {
   downloadOnClick: () => void, editAndSaveOnClick: () => void,

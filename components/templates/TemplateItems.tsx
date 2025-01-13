@@ -1,7 +1,8 @@
 import { TemplateSection, TemplateSectionItem } from "@/types/template";
-import TemplateItem from "@/components/templates/TemplateItem";
 import TextWithToolTip from "@/components/TextWithToolTip";
+import TemplateItem from "@/components/templates/TemplateItem";
 
+// Parent component for rendering all the TemplateItem components
 const TemplateItems = ({ templateSection }: { templateSection: TemplateSection }) => {
   const templateSectionItems: TemplateSectionItem[] = templateSection.sectionItems;
 

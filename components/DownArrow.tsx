@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+// Loads the image for the navbar
 export default function DownArrow() {
   return (
     <Image

@@ -1,7 +1,11 @@
+import React from "react";
 import ThinLineSignatureField from "@/components/pdf/ThinLineSignatureField";
 
-const FinalPage = () => {
+// The FinalPage displays a simple page that has a final comments field (just a div with a border)
+// and another place for the inspector to sign their name, data, etc.
+const FinalPage: React.FC = () => {
   return (
+    // for custom classes, see styles/globals.css for more details
     <div className={"page mx-auto"}>
       <div className={"w-4/5 mx-auto my-20"}>
         <p className={"subparagraph pl-2"}>Final Supplementary Comments:</p>

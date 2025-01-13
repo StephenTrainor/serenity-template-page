@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import OutlineButtonWithIcon from "./OutlineButtonWithIcon";
 import {
@@ -13,6 +13,7 @@ import {
 } from "react-share";
 
 const ShareDropdown = () => {
+  // use router hook to get the current url
   const router = useRouter();
   const THIS_URL = `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`
 
@@ -53,9 +54,9 @@ const ShareDropdown = () => {
           onClick={flipExpanded}
         />
       </div>
-      {/* I chose to manually type out the different button components
-      because of the way I had to place the icon component inside the 
-      button component */}
+
+      {/* I chose to manually type out the different button components because of the way I had to place the icon
+      component inside the button component. Could be mitigated with a better icon library */}
       <div ref={dropdownListRef} className={`share-dropdown-container ${isExpanded ? "visible" : "hidden"}`}>
         <div className="share-dropdown-item">
           <EmailShareButton url={THIS_URL}>

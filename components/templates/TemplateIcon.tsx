@@ -1,6 +1,8 @@
-import {DEFAULT_TEMPLATE_ICON_URL, Template} from "@/types/template";
 import Image from "next/image";
+import {DEFAULT_TEMPLATE_ICON_URL, Template} from "@/types/template";
 
+// TemplateIcon is used to generate the corresponding icon for a template. If an image is not found or the url is wrong,
+// a default icon is displayed
 const TemplateIcon = ({ template
 } : {
   template: Template

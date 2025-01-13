@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* basic colors and styles that are defined for convenient reuse */
 :root {
   --white: #FFFFFF;
   --black: #000000;
@@ -17,14 +18,19 @@
   --light-text: #FFFFFF;
 }
 
+/* Sets the basic features of each page that will be printed */
 @page {
   margin: 4mm;
-  background-color: #FFFFFF;
+  background-color: var(--white);
+
+  /* standard letter size, for printing */
   size: 8.5in 11in;
+
+  /* a page counter that is independent of the react components, placed using the @top-right-corner selector */
   @top-right-corner {
     margin-right: 20px;
     margin-top: 20px;
-  content: counter(page);
+    content: counter(page);
   }
 }
 
@@ -33,17 +39,19 @@
 }
 
 .page {
+  @apply flex flex-col;
   background-color: var(--white);
   position: relative;
   page-break-after: always;
-  @apply flex flex-col;
   page-break-inside: auto;
 }
 
+/* Avoid creating an extra blank page below the last page */
 .page:last-of-type {
   page-break-after: avoid;
 }
 
+/* creates a border around a div to display a thin line for signatures */
 .signature-line {
   width: 90%;
   @apply mx-auto;
@@ -97,9 +105,14 @@
   background-color: var(--light-hover);
 }
 
+/* ensure that no page break cuts a row in half, pushing the row to the next page automatically */
 table { page-break-inside:auto }
 tr    { break-inside: avoid; page-break-inside:avoid; page-break-after:auto }
 
+/* the goal of the css for the table is to get a table with grid lines but rounded-corners, I was able to achieve this
+using some interesting css selectors but is definitely not necessary */
+
+/* first create a border around the entire table */
 table.checklist-table {
   @apply round-soft text-sm;
   width: 90%;
@@ -108,6 +121,8 @@ table.checklist-table {
   border: solid var(--border) 1px;
 }
 
+/* for each table cell (including headers), add a bottom and right border to create the illusion of a box around each
+cell */
 table.checklist-table > thead > tr > th,
 table.checklist-table > tbody > tr > td {
   border-bottom: solid var(--border) 1px;
@@ -115,20 +130,19 @@ table.checklist-table > tbody > tr > td {
   padding: 4px;
 }
 
-td:empty {
+/* ensure that empty cells do not add border lines */
+td:empty, tr:empty {
   border: none;
 }
 
-tr:empty {
-  border: none;
-}
-
+/* ensure that table cells at the last row do not add an extra border line to the table */
 table.checklist-table > tbody > tr:last-of-type {
   td {
     border-bottom: none;
   }
 }
 
+/* ensure that right-most cells do not add an extra border line to the table */
 table.checklist-table > thead > tr > th:last-of-type {
   border-right: none;
 }
@@ -286,9 +300,12 @@ table.checklist-table > tbody > tr > td:last-of-type {
 body {
   color: var(--foreground);
   background: var(--background);
+
+  /* set Serenity's font to be the default for all text */
   font-family: 'Montserrat', sans-serif;
 }
 
+/* make sure user's cursor changes on any button to indicate that it is clickable */
 button {
   cursor: pointer;
 }

@@ -1,6 +1,10 @@
 import { useState } from "react";
 
+// NOTE: This component is not used in the PDF generation, it is only used for displaying a preview of the template in
+// the pages/templates/[id].tsx page
 const CheckBoxItem = ({ checkBoxText } : { checkBoxText: string }) => {
+  // each check box controls its own state because multiple check boxes can be selected
+  // nothing is done with the value since it is purely visual and not used in PDF generation
   const [isChecked, setIsChecked] = useState(false);
 
   return (

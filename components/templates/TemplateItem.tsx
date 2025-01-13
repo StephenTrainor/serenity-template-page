@@ -1,14 +1,17 @@
+import { TemplateSectionItem } from "@/types/template";
 import Date from "@/components/templates/Date";
 import Radio from "@/components/templates/Radio";
 import Number from "@/components/templates/Number";
-import Slider from "./Slider";
+import Slider from "@/components/templates/Slider";
 import CheckBoxGroup from "@/components/templates/CheckBoxGroup";
 import MultiLineText from "@/components/templates/MultiLineText";
 import SingleLineText from "@/components/templates/SingleLineText";
-import {TemplateSectionItem} from "@/types/template";
 import TextWithToolTip from "@/components/TextWithToolTip";
 
+// TemplateItem will take in a templateSection and render the appropriate component to display, again these components
+// are not used in the PDF generation
 const TemplateItem = ({ templateSectionItem } : {templateSectionItem: TemplateSectionItem}) => {
+
   const components = {
     "singleLineText": <SingleLineText answerOptions={templateSectionItem.answerOptions}/>,
     "multiLineText": <MultiLineText answerOptions={templateSectionItem.answerOptions}/>,
@@ -21,13 +24,14 @@ const TemplateItem = ({ templateSectionItem } : {templateSectionItem: TemplateSe
 
   return (
     <div className="">
-      {/*<p className="pb-1">{templateSectionItem.fieldTitle}</p>*/}
+      {/* Incorporate the appropriate field details in addition to the field assertion/question */}
       <TextWithToolTip
         toolTipText={templateSectionItem.fieldDetails}
         mainText={templateSectionItem.fieldTitle}
         mainTextClasses={"text-left"}
         centeredText={false}
       />
+      {/* Map the section item to the proper component and render it */}
       {components[templateSectionItem.fieldType]}
     </div>
   );

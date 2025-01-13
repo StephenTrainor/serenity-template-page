@@ -75,6 +75,7 @@ const Home: React.FC = () => {
         <GenerateTemplateSection />
         <SerenityDivider />
         <div className="flex flex-row w-10/12">
+          {/* The form is set up but the current buttons do nothing */}
           <Form action="/" className="flex flex-col half my-auto">
             <input 
               className="single-line-input mx-auto mb-2 w-10/12"
