@@ -17,7 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-share": "^5.1.2",
-    "react-to-pdf": "^1.0.1"
+    "react-to-print": "^3.0.4"
   },
   "devDependencies": {
     "@types/node": "^20",
