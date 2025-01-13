@@ -172,6 +172,10 @@ const TemplatePage = ({
     documentTitle: "template"
   });
 
+  const routeAndGenerateTemplate = () => {
+    router.push("/TODO-SOME-URL").then(r => {});
+  };
+
   return (
     <div>
       <Navbar/>
@@ -193,7 +197,7 @@ const TemplatePage = ({
             <TemplateIcon template={template}/>
             <DownloadEditSaveSection
               downloadOnClick={() => reactToPrint()}
-              editAndSaveOnClick={() => router.push("/TODO-SOME-URL").then(r => {})}
+              editAndSaveOnClick={() => routeAndGenerateTemplate()}
             />
           </div>
           <div className="flex1 flex flex-row justify-end">
@@ -225,7 +229,10 @@ const TemplatePage = ({
             />
           ))}
         </div>
-        <DownloadEditSaveSection/>
+        <DownloadEditSaveSection
+          downloadOnClick={() => reactToPrint()}
+          editAndSaveOnClick={() => routeAndGenerateTemplate()}
+        />
         <SerenityDivider/>
         <div className="">
           <p className="second-title">Looking For Something Else?</p>
