@@ -1,13 +1,12 @@
 import { TemplateSection, TemplateSectionItem } from "@/types/template";
-import TemplateItem from "@/components/templateScreen/TemplateItem";
+import TemplateItem from "@/components/templates/TemplateItem";
 import TextWithToolTip from "@/components/TextWithToolTip";
 
 const TemplateItems = ({ templateSection }: { templateSection: TemplateSection }) => {
   const templateSectionItems: TemplateSectionItem[] = templateSection.sectionItems;
 
-  // TODO: incorporate the section name and description somehow
   return (
-    <>
+    <div className={"templates-container"}>
       <TextWithToolTip
         toolTipText={templateSection.sectionDescription}
         mainText={templateSection.sectionName}
@@ -20,7 +19,7 @@ const TemplateItems = ({ templateSection }: { templateSection: TemplateSection }
           templateSectionItem={templateSectionItem}
         />
       ))}
-    </>
+    </div>
   );
 };
 

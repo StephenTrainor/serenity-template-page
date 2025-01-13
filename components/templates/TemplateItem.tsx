@@ -1,10 +1,10 @@
-import Date from "@/components/templateScreen/Date";
-import Radio from "@/components/templateScreen/Radio";
-import Number from "@/components/templateScreen/Number";
+import Date from "@/components/templates/Date";
+import Radio from "@/components/templates/Radio";
+import Number from "@/components/templates/Number";
 import Slider from "./Slider";
-import CheckBoxGroup from "@/components/templateScreen/CheckBoxGroup";
-import MultiLineText from "@/components/templateScreen/MultiLineText";
-import SingleLineText from "@/components/templateScreen/SingleLineText";
+import CheckBoxGroup from "@/components/templates/CheckBoxGroup";
+import MultiLineText from "@/components/templates/MultiLineText";
+import SingleLineText from "@/components/templates/SingleLineText";
 import {TemplateSectionItem} from "@/types/template";
 import TextWithToolTip from "@/components/TextWithToolTip";
 

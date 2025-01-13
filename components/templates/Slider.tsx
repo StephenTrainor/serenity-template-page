@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Radio from "@/components/templateScreen/Radio";
-import SingleLineText from "@/components/templateScreen/SingleLineText";
+import Radio from "@/components/templates/Radio";
+import SingleLineText from "@/components/templates/SingleLineText";
 
 const Slider = ({ answerOptions } : { answerOptions: string[]}) => {
   var min = 0;
